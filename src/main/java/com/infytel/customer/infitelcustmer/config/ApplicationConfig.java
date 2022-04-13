@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.reactive.ClientHttpConnector;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.netty.http.HttpProtocol;
 import reactor.netty.http.client.HttpClient;
@@ -21,11 +20,6 @@ public class ApplicationConfig {
     @Bean
     public ModelMapper modelMapper() {
         return  new ModelMapper();
-    }
-
-    @Bean @LoadBalanced
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
     }
 
     @Bean
